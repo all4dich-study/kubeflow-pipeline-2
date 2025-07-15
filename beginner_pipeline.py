@@ -181,7 +181,7 @@ def validate_model(
 @pipeline(
     name="beginner-ml-pipeline",
     description="A beginner-friendly ML pipeline demonstrating data processing, training, and evaluation",
-    version="1.0.0"
+    #version="1.0.0"
 )
 def beginner_ml_pipeline(
     dataset_size: int = 1000,

@@ -37,7 +37,36 @@ python run_pipeline.py --action compile
 
 This creates `beginner_ml_pipeline.yaml` which can be uploaded to Kubeflow.
 
-### 3. Run on Kubeflow Cluster
+### 3. Deploy to Kubeflow Cluster
+
+You can deploy the pipeline in two ways:
+
+#### Option A: Using Web Browser UI (Recommended)
+
+1. **Compile the pipeline:**
+   ```bash
+   python run_pipeline.py --action compile
+   ```
+   This creates `beginner_ml_pipeline.yaml`
+
+2. **Upload via Kubeflow UI:**
+   - Open your Kubeflow dashboard in browser
+   - Navigate to **Pipelines** → **Pipelines**
+   - Click **"Upload pipeline"** or **"+ Upload pipeline"**
+   - Choose **"Upload a file"**
+   - Select `beginner_ml_pipeline.yaml`
+   - Give it a name and description
+   - Click **"Create"**
+
+3. **Create and run experiment:**
+   - Go to **Experiments** → **"+ Create experiment"**
+   - Name your experiment (e.g., "beginner-ml-experiment")
+   - Click **"Create run"**
+   - Select your uploaded pipeline
+   - Configure parameters if needed
+   - Click **"Start"**
+
+#### Option B: Using Command Line
 
 ```bash
 python run_pipeline.py --action run --host <KUBEFLOW_HOST>
